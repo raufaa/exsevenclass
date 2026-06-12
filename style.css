@@ -1,0 +1,238 @@
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Times New Roman',Sans-Serif;
+  
+}
+body{
+  height:100vh;
+  overflow-y:auto;
+  background:linear-gradient(135deg,#a0c4ff,#bdb2ff,#ffc6ff,#cdb4db);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* PAGE */
+.page{
+  display:none;
+  width:85%;
+  max-width:750px;
+  padding:35px;
+  border-radius:25px;
+  background:rgba(0,0,50,0.35);
+  backdrop-filter:blur(10px);
+  color:white;
+  text-align:center;
+  animation:fade .8s ease;
+}
+
+.page.active{display:block;}
+
+
+
+@keyframes fade{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h1{font-size:40px;}
+h2{font-weight:300;margin:10px 0;}
+
+p{font-size:15px;line-height:1.6;min-height:80px;}
+
+.memories{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  margin-top:15px;
+}
+
+
+/* POLAROID STYLE */
+.memories img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:10px;
+  padding:10px 10px 30px 10px;
+  background:white;
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+  transform: rotate(-2deg);
+  transition:0.3s;
+}
+
+/* efek hover biar hidup */
+.memories img:hover{
+  transform: scale(1.05) rotate(0deg);
+}
+.absen-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+
+  max-height: 350px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+}
+
+.absen-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  margin-top:15px;
+}
+
+/* POLAROID STYLE */
+.polaroid{
+  background:white;
+  padding:10px 10px 20px 10px;
+  border-radius:10px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+  transform:rotate(-1deg);
+  transition:0.3s;
+}
+
+.polaroid img{
+  width:100%;
+  height:100px;
+  object-fit:cover;
+  border-radius:6px;
+}
+
+/* NAMA DI BAWAH FOTO */
+.polaroid p{
+  margin-top:8px;
+  color:black;
+  font-size:13px;
+  text-align:center;
+}
+
+/* hover aesthetic */
+.polaroid:hover{
+  transform:scale(1.05) rotate(0deg);
+}
+.absen-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+
+  max-height: 350px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+
+/* BUTTON */
+button{
+  margin-top:15px;
+  padding:12px 25px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(90deg,#89cff0,#b388ff);
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* SLIDESHOW */
+.slideshow img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: rgba(0,0,0,0.2);
+  position: absolute;
+  top:0;
+  left: 0;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+  
+}
+.slideshow{
+  width:100%;
+  height:220px;
+  margin:15px auto;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+
+
+
+.slideshow img.active{
+  opacity:1;
+}
+
+/* HEART */
+.heart{
+  position:absolute;
+  top:-10px;
+  color:#ff7eb9;
+  animation:fall linear infinite;
+}
+/* FLOWER */
+.flower{
+  position:absolute;
+  top:-10px;
+  color:#728FCE;
+  animation:fall linear infinite;
+}
+@keyframes fall{
+  to{transform:translateY(110vh);opacity:0;}
+}
+
+/* STAR */
+.star{
+  position:absolute;
+  width:2px;
+  height:80px;
+  background:linear-gradient(white,transparent);
+  animation:shoot 3s linear infinite;
+}
+
+@keyframes shoot{
+  0%{transform:translate(0,0) rotate(45deg);opacity:1;}
+  100%{transform:translate(300px,600px) rotate(45deg);opacity:0;}
+}
+
+/* CURSOR */
+.cursor{
+  display:inline-block;
+  width:2px;
+  background:white;
+  animation:blink .7s infinite;
+}
+@keyframes blink{50%{opacity:0;}}
+
+.nav-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:20px;
+}
+
+.nav-buttons button{
+  padding:12px 25px;
+  border:none;
+  border-radius:50px;
+  cursor:pointer;
+
+  background:linear-gradient(
+    135deg,
+    #8ecae6,
+    #b8a2e3,
+    #f7c6d9
+  );
+
+  color:white;
+  font-weight:bold;
+}
+
+</style>
